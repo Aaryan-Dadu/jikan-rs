@@ -83,6 +83,3 @@ async fn get_user_favorites() {
     assert!(result.is_ok());
     wait_between_tests().await;
 }
-
-
-

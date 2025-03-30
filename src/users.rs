@@ -110,20 +110,31 @@ impl JikanClient {
         self.get(&format!("/users/{}/statistics", username)).await
     }
 
-    pub async fn get_user_friends(&self, username: &str) -> Result<UserVectorResponse<User>, JikanError> {
+    pub async fn get_user_friends(
+        &self,
+        username: &str,
+    ) -> Result<UserVectorResponse<User>, JikanError> {
         self.get(&format!("/users/{}/friends", username)).await
     }
-    
-    pub async fn get_user_reviews(&self, username: &str) -> Result<UserVectorResponse<ReviewUser>, JikanError> {
+
+    pub async fn get_user_reviews(
+        &self,
+        username: &str,
+    ) -> Result<UserVectorResponse<ReviewUser>, JikanError> {
         self.get(&format!("/users/{}/reviews", username)).await
     }
 
-    pub async fn get_user_history(&self, username: &str) -> Result<UserVectorResponse<UserUpdate>, JikanError> {
+    pub async fn get_user_history(
+        &self,
+        username: &str,
+    ) -> Result<UserVectorResponse<UserUpdate>, JikanError> {
         self.get(&format!("/users/{}/history", username)).await
     }
 
-    pub async fn get_user_favorites(&self, username: &str) -> Result<UserResponse<serde_json::Value>, JikanError> {
+    pub async fn get_user_favorites(
+        &self,
+        username: &str,
+    ) -> Result<UserResponse<serde_json::Value>, JikanError> {
         self.get(&format!("/users/{}/favorites", username)).await
     }
-    
 }
